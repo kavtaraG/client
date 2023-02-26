@@ -1,0 +1,11 @@
+## App owner
+- Giorgi Kavtaradze
+
+## About app
+- APP IS UNDER CONTRUCTION
+- App uses node js enviroment, mongoDB v 4.10, ejs framework
+- App is a client of server app which connects to hospital database
+- Password is 1234
+
+## How to run the app
+- npm i and then tipe nodemon

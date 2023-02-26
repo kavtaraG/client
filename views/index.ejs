@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script>
+      let doLogin = () => {
+        let password = document.getElementById('password').value;
+        
+          if(password =='1234') {
+            return location='/table';
+          }else{
+            return alert('Select field is empty');
+          }
+      };
+  
+    </script>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="login-container">
+      <div id="pharmacy-module">
+        <p>Pharmacy Module</p>
+      </div>
+      <select id="select">
+        <option value="">Choose store</option>
+        <% for(let i = 0; i < username.length; i ++) { %>
+          <option id="username" value=""><%= username[i].username %></option>
+        <% } %>
+        
+      </select><br><br>
+      <input id="password" type="password" placeholder="Password">
+      <input id="btn" type="button" value="Login" onclick="doLogin()">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+	<script>
+		let doSearch = () => {
+			let searchText = document.getElementById('searchText').value;
+			let select = document.getElementById('select').value;
+			let data = { searchText, select };
+			let response = fetch("/api/v1/hosp", {
+				method: "POST", // or 'PUT'
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+				})
+				.then((response) => response.json())
+				.then((data) => {
+					console.log("Success:", data);
+				})
+				.catch((error) => {
+					console.error("Error:", error);
+				});
+			if(searchText == ""){
+				return alert('Search field is empty');
+			}else if(searchText == ""){
+				return location='/table'
+			}else{
+				return location='/search/'+ select +'/'+ searchText;
+			};
+		};
+	</script>
+	<header>
+		<div id="identifier">
+			<p>Pharmacy store identifier</p>
+		</div>
+		<div id="header-container">
+			<input id="btn" type="button" value="Reload" onclick="location='/table'">
+		</div>
+	</header>
+	<div id="pharmacy-container">
+		<div id="pharm-module">
+			<p>Pharmacy module</p>
+		</div>
+		<input id="searchText" type="text" value="" placeholder="Search ID">
+		<input id="btn" type="button" value="Search" onclick="doSearch()">
+	</div>
+</div>
+    <div class="page-data">
+        <div class="data-table">
+           <table border="1" cellpadding="7" cellspacing="7">
+               <tr>
+                   <th width="20px">No</th>
+                   <th width="250px">Name</th>
+                   <th width="220px">Surname</th>
+                   <th width="100px">Age</th>
+				   <th width="100px">ID</th>
+                   <th width="300px">Mounth</th>
+                   <th width="300px">Year</th>
+                   <th width="300px">Prescreption</th>
+                   <th width="300px">Drugs</th>
+               </tr>
+               <% if(data.length){for(var i = 0;i < data.length;i++) { %>       
+               <tr>
+                   <td><%=data[i].id%></td>
+                   <td><%=data[i].name%></td>
+                   <td><%=data[i].surname%></td>
+                   <td><%=data[i].age%></td>
+				   <td><%=data[i].ID%></td>
+                   <td><%=data[i].mounth%></td>
+                   <td><%=data[i].year%></td>
+                   <td><%=data[i].prescreption%></td>
+                   <td><%=data[i].drugs%></td>
+               </tr>
+           <% }
+            }else{ %>
+                <tr>
+                   <td colspan="7">No client found</td>
+                </tr>
+           <% } %> 
+           </table>
+        </div>
+       </div>
+  </body>
+</html>

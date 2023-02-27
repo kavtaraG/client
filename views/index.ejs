@@ -7,13 +7,34 @@
   <body>
     <script>
       let doLogin = () => {
+        let username = document.getElementById('username');
         let password = document.getElementById('password').value;
         
-          if(password =='1234') {
-            return location='/table';
+        const combination = ['123', '12', '1', '321', '21', '312'];
+			  const obj = [...combination];
+        const objLength = obj.length > 4
+
+				if(username){
+					if(password == '1234'){
+						return location = '/pharmacy';
+					}else if(password == obj[0] ){
+						return alert ('Password is incorrect');
+					}else if(password == obj[1]){
+						return alert ('Password is incorrect');
+					}else if(password == obj[2]){
+						return alert('Password is incorrect')
+					}else if(password == obj[3]){
+						return alert ('Password is incorrect');
+					}else if(password == obj[4]){
+						return alert ('Password is incorrect');
+					}else if(password == obj[5]){
+						return alert('Password is incorrect')
+					}else if(objLength){
+            return alert('Password id incorrect');
           }else{
-            return alert('Select field is empty');
-          }
+						return alert('Password and select field is empty')
+					};
+				};
       };
   
     </script>

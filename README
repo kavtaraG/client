@@ -4,6 +4,7 @@
 ## About app
 - APP IS UNDER CONTRUCTION
 - App uses node js enviroment, mongoDB v 4.10, ejs framework
+- In API it creates and fetchs data from local database
 - App is a client of server app which connects to hospital database
 - Password is 1234
 

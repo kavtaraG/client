@@ -9,4 +9,7 @@
 - Password is 1234
 
 ## How to run the app
-- npm i and then tipe nodemon
+- Project setup:
+	1) cd client
+	2) npm i
+	3) nodemon

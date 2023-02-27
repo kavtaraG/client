@@ -33,7 +33,7 @@ const getMongoData = function(){
 	  MongoClient.connect(url,{ useNewUrlParser: true }, function(err, client) {
 	  assert.equal(null, err);
 	  const db = client.db(dbName);
-		db.collection('hosps').find({[field]:{'$regex' : searchText, '$options' : 'i'}}).toArray(function (err, result) {
+		db.collection('hosps').find({[field]:{'$not':{'$regex' : searchText, '$options' : 'x'}}}).toArray(function (err, result) {
 		  if (err) throw err
 		  console.log("result:"+JSON.stringify(result));
 		  resolve(result);

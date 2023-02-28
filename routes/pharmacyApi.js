@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express.Router();
-const { getData, getMongoData } = require('../controller/app.mongo');
+const { getMongoData } = require('../controller/app.mongo');
 
 
 app.get('/', async (req, res) => {

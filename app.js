@@ -54,4 +54,8 @@ server.listen(PORT, () => {
   });
 });
 
+server.on('close', () => {
+  return 'server is closed';
+});
+
 module.exports = app;

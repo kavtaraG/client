@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
     <script>
@@ -16,30 +16,29 @@
 
 				if(username){
 					if(password == '1234'){
-						return location = '/pharmacy';
+						return location = '/table';
 					}else if(password == obj[0] ){
 						return alert ('Password is incorrect');
 					}else if(password == obj[1]){
 						return alert ('Password is incorrect');
 					}else if(password == obj[2]){
-						return alert('Password is incorrect')
+						return alert('Password is incorrect');
 					}else if(password == obj[3]){
 						return alert ('Password is incorrect');
 					}else if(password == obj[4]){
 						return alert ('Password is incorrect');
 					}else if(password == obj[5]){
-						return alert('Password is incorrect')
+						return alert('Password is incorrect');
 					}else if(objLength){
             return alert('Password id incorrect');
           }else{
-						return alert('Password and select field is empty')
+						return alert('Password and select field is empty');
 					};
 				};
       };
   
     </script>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     <div id="login-container">
       <div id="pharmacy-module">
         <p>Pharmacy Module</p>
@@ -51,7 +50,7 @@
         <% } %>
         
       </select><br><br>
-      <input id="password" type="password" placeholder="Password">
+      <input id="password" type="password" placeholder="Password"><br><br>
       <input id="btn" type="button" value="Login" onclick="doLogin()">
     </div>
   </body>

@@ -1,0 +1,33 @@
+body{
+	box-sizing: border-box;
+	background-color: whitesmoke;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+	margin-left: 45%;
+}
+
+#login-container{
+	margin-left: 45%;
+}
+
+#select{
+	border-radius:10%;
+	width: 20%;
+	padding: 1%;
+}
+
+#password{
+	border-radius: 10%;
+	width: 17%;
+	padding: 1.5%;
+}
+
+#btn{
+	border-radius: 10%;
+	width: 20.5%;
+	padding: 1.5%;
+	cursor: pointer;
+	background-color: rgb(117, 117, 206);
+}
